@@ -15,7 +15,7 @@ $( document ).ready(function() {
       $("#add-train").on("click", function(event) {
 
         event.preventDefault();
-        
+        console.log("submit has been clicked");
     //get user data from form
         var trainName = $("#trainName").val().trim();
         var destination = $("#destination").val().trim();
@@ -28,6 +28,7 @@ $( document ).ready(function() {
             firstTime: firstTime,
             frequency: frequency
         };
+        console.log("here is the traindoc " +  JSON.stringify(trainDoc));
         database.ref().push(trainDoc);
         //empty input values
         $("#trainName").val("");
@@ -40,7 +41,8 @@ $( document ).ready(function() {
         var trainName = childSnapshot.val().trainName;
         var destination = childSnapshot.val().destination;
         var firstTime = childSnapshot.val().firstTime;
-        var frequency = parseInt(childSnapshot.val().frequency);       
+        var frequency = parseInt(childSnapshot.val().frequency);
+        console.log(trainName);       
 //  firstTime conv
   var theTime = moment(firstTime, "HH:mm").subtract(1, "years");
   //current time
