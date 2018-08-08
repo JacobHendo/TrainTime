@@ -65,7 +65,7 @@ $( document ).ready(function() {
     $("<td>").text(eta + " minutes"),
   );
 
-  $("theLastRow").append(nextRow);
+  $("#theLastRow").append(nextRow);
 
 })
 });
